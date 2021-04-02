@@ -1,11 +1,11 @@
-FROM tensorflow/tensorflow:2.1.0-gpu-py3
+FROM tensorflow/tensorflow:2.2.1-gpu-py3
 
 WORKDIR /
 
 COPY . ./
 
 SHELL ["/bin/bash", "-c"]
-RUN apt-get update && apt-get install -yq --assume-yes --no-install-recommends \
+RUN apt-get update && apt-get upgrade -yq && apt-get install -yq --assume-yes --no-install-recommends \
   wget \
   zip \
   git \
